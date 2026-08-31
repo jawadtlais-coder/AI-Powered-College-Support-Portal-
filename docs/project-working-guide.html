@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Support Multi-Agent Portal - Project Working Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    :root {
+      --ink: #172033;
+      --muted: #5b667a;
+      --line: #d9e0ea;
+      --soft: #f5f7fb;
+      --brand: #1e5b8f;
+      --brand-dark: #123955;
+      --accent: #2f7d5c;
+      --warn: #9b5f12;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: "Segoe UI", "Aptos", "Helvetica Neue", Arial, sans-serif;
+      font-size: 11.5pt;
+      line-height: 1.52;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.18;
+      color: var(--brand-dark);
+    }
+
+    h1 {
+      font-size: 30pt;
+      max-width: 720px;
+    }
+
+    h2 {
+      font-size: 18pt;
+      margin-top: 26px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      break-after: avoid;
+    }
+
+    h3 {
+      font-size: 13.5pt;
+      margin-top: 16px;
+      break-after: avoid;
+    }
+
+    p {
+      margin: 8px 0 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    code {
+      color: #16324c;
+      background: #eef3f8;
+      border: 1px solid #dce6f1;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 9.5pt;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 10.5pt;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf4fa;
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    .cover {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px 0 8px;
+      break-after: page;
+    }
+
+    .cover-top {
+      border-left: 7px solid var(--brand);
+      padding-left: 22px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14pt;
+      margin-top: 12px;
+      max-width: 680px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+      max-width: 720px;
+    }
+
+    .meta-card,
+    .note,
+    .flow,
+    .callout {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .meta-card strong,
+    .note strong,
+    .callout strong {
+      display: block;
+      color: var(--brand-dark);
+      margin-bottom: 3px;
+    }
+
+    .toc {
+      columns: 2;
+      column-gap: 28px;
+      margin-top: 12px;
+    }
+
+    .toc li {
+      break-inside: avoid;
+      margin-bottom: 5px;
+    }
+
+    .section {
+      break-inside: auto;
+    }
+
+    .page-break {
+      break-before: page;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .flow {
+      background: #fbfcfe;
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 9.5pt;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid #bad2e7;
+      background: #eef6fc;
+      color: #153c5d;
+      border-radius: 999px;
+      padding: 2px 7px;
+      font-size: 9.5pt;
+      margin: 2px 4px 2px 0;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 10pt;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="cover-top">
+      <p class="badge">Project Documentation</p>
+      <h1>College Support Multi-Agent Portal</h1>
+      <p class="subtitle">A complete guide explaining how the project works, how its modules connect, and how each user workflow moves through the system.</p>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Frontend</strong>
+          Next.js and React TypeScript application in <code>web/</code>.
+        </div>
+        <div class="meta-card">
+          <strong>Backend</strong>
+          NestJS TypeScript API in <code>api/</code>.
+        </div>
+        <div class="meta-card">
+          <strong>Database</strong>
+          PostgreSQL with Prisma ORM and pgvector support.
+        </div>
+        <div class="meta-card">
+          <strong>AI Design</strong>
+          Multi-agent assistant with orchestrator, knowledge, and workflow agents.
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      Generated from the current repository structure. Main source files include <code>README.md</code>, <code>api/prisma/schema.prisma</code>, <code>api/src</code>, and <code>web/src</code>.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Table Of Contents</h2>
+    <ol class="toc">
+      <li>Project Purpose</li>
+      <li>High-Level Architecture</li>
+      <li>Technology Stack</li>
+      <li>User Roles</li>
+      <li>Database Design</li>
+      <li>Backend API Modules</li>
+      <li>Frontend Application</li>
+      <li>Assistant And Multi-Agent Flow</li>
+      <li>Knowledge Base And RAG Flow</li>
+      <li>Ticket Workflow</li>
+      <li>Admin Workflow</li>
+      <li>Security And Permissions</li>
+      <li>Notifications, Email, And Uploads</li>
+      <li>Public API</li>
+      <li>Deployment And Running</li>
+      <li>Testing And Project Health</li>
+      <li>Recommended Improvements</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>1. Project Purpose</h2>
+    <p>
+      The College Support Multi-Agent Portal is a support system for university students, staff, and admins. Its main goal is to reduce manual reception work by letting students ask common questions, receive answers from trusted knowledge documents, and create tickets when the assistant cannot safely answer.
+    </p>
+    <p>
+      The project focuses on two support areas: <code>REGISTRATION</code> and <code>IT</code>. It combines a normal support-ticket workflow with an AI assistant. The assistant does not answer freely from memory only. It searches the local knowledge base first, calculates confidence, and escalates uncertain cases into tickets.
+    </p>
+    <div class="note">
+      <strong>Main idea</strong>
+      Students get fast self-service answers when trusted information exists. Staff get structured tickets when human review is required. Admins manage users, knowledge content, and operational visibility.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2. High-Level Architecture</h2>
+    <p>
+      The application is split into four major layers: browser frontend, backend API, database/storage, and optional external services.
+    </p>
+    <div class="flow">Browser
+  -> Next.js web app
+  -> NestJS REST API
+  -> Prisma ORM
+  -> PostgreSQL database
+
+Assistant request
+  -> AssistantController
+  -> AssistantService
+  -> OrchestratorService
+  -> KnowledgeAgentService and/or WorkflowAgentService
+  -> KnowledgeService, GeminiService, TicketsService
+  -> Database records and response back to the user</div>
+    <h3>Layer Responsibilities</h3>
+    <table>
+      <tr>
+        <th>Layer</th>
+        <th>Responsibility</th>
+      </tr>
+      <tr>
+        <td>Web app</td>
+        <td>Displays login, registration, dashboard, assistant chat, ticket lists, ticket details, admin panels, and forms.</td>
+      </tr>
+      <tr>
+        <td>API</td>
+        <td>Handles authentication, authorization, assistant routing, tickets, files, notifications, knowledge management, and public endpoints.</td>
+      </tr>
+      <tr>
+        <td>Database</td>
+        <td>Stores users, profiles, tickets, events, attachments, knowledge documents, FAQ entries, AI traces, API keys, and notifications.</td>
+      </tr>
+      <tr>
+        <td>External services</td>
+        <td>Gemini can provide embeddings and answers. SMTP can send ticket email notifications. Both have local/fallback behavior where possible.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>3. Technology Stack</h2>
+    <div class="grid-2">
+      <div class="callout">
+        <strong>Frontend</strong>
+        <ul>
+          <li>Next.js 16</li>
+          <li>React 19</li>
+          <li>TypeScript</li>
+          <li>Local browser storage for JWT token</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <strong>Backend</strong>
+        <ul>
+          <li>NestJS 11</li>
+          <li>Prisma ORM</li>
+          <li>PostgreSQL 16</li>
+          <li>JWT authentication and role guards</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <strong>AI And Search</strong>
+        <ul>
+          <li>Gemini text generation</li>
+          <li>Gemini embeddings</li>
+          <li>Local deterministic fallback when <code>GEMINI_API_KEY</code> is missing</li>
+          <li>Keyword overlap and cosine similarity ranking</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <strong>Deployment</strong>
+        <ul>
+          <li>Docker Compose</li>
+          <li>Nginx reverse proxy</li>
+          <li>Persistent database volume</li>
+          <li>Persistent upload volume</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <h2>4. User Roles</h2>
+    <p>
+      The application uses three roles: <code>STUDENT</code>, <code>STAFF</code>, and <code>ADMIN</code>. Permissions are enforced in the backend by JWT authentication, role guards, and service-level access checks.
+    </p>
+    <table>
+      <tr>
+        <th>Role</th>
+        <th>What The Role Can Do</th>
+        <th>Important Limits</th>
+      </tr>
+      <tr>
+        <td><code>STUDENT</code></td>
+        <td>Register, log in, ask the assistant, create tickets, view their own tickets, upload attachments, and send ticket messages.</td>
+        <td>Students can only access their own tickets. They need an academic department assigned before creating tickets.</td>
+      </tr>
+      <tr>
+        <td><code>STAFF</code></td>
+        <td>View queue tickets in their assigned support area and academic department, claim tickets, update status, reply, and manage attachments.</td>
+        <td>Staff cannot create tickets for themselves. They can only work in their assigned lane.</td>
+      </tr>
+      <tr>
+        <td><code>ADMIN</code></td>
+        <td>Provision users, assign routing, manage knowledge content, view traces, and oversee all ticket queues.</td>
+        <td>Admins have global visibility, so the account must be protected carefully.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>5. Database Design</h2>
+    <p>
+      The Prisma schema in <code>api/prisma/schema.prisma</code> defines the main business data. The design is relational and keeps audit/history data separate from the main ticket records.
+    </p>
+    <h3>Main Models</h3>
+    <table>
+      <tr>
+        <th>Model</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>User</code></td>
+        <td>Stores login identity, LIU ID, email, hashed password, role, support area, academic department, and relations to tickets/events.</td>
+      </tr>
+      <tr>
+        <td><code>Profile</code></td>
+        <td>Stores user display information such as full name and avatar URL.</td>
+      </tr>
+      <tr>
+        <td><code>Ticket</code></td>
+        <td>Stores support request subject, description, area, department, status, student, assignee, and timestamps.</td>
+      </tr>
+      <tr>
+        <td><code>TicketEvent</code></td>
+        <td>Stores ticket history such as creation, claim, status change, update, attachment events, and messages.</td>
+      </tr>
+      <tr>
+        <td><code>Attachment</code></td>
+        <td>Stores uploaded file metadata and path to disk storage.</td>
+      </tr>
+      <tr>
+        <td><code>KnowledgeDocument</code></td>
+        <td>Stores uploaded or seeded knowledge documents used by the assistant.</td>
+      </tr>
+      <tr>
+        <td><code>KnowledgeChunk</code></td>
+        <td>Stores document chunks and embeddings for retrieval.</td>
+      </tr>
+      <tr>
+        <td><code>FaqEntry</code></td>
+        <td>Stores admin-created question and answer pairs.</td>
+      </tr>
+      <tr>
+        <td><code>OrchestratorTrace</code></td>
+        <td>Stores AI routing decisions, confidence values, routed agents, and outcomes.</td>
+      </tr>
+      <tr>
+        <td><code>ApiKey</code></td>
+        <td>Stores hashed API keys for the external public API. The dashboard no longer exposes key generation, but the backend model remains for public API protection.</td>
+      </tr>
+      <tr>
+        <td><code>Notification</code></td>
+        <td>Stores unread/read notification records for users.</td>
+      </tr>
+    </table>
+    <h3>Important Enums</h3>
+    <p>
+      <span class="badge">Role: STUDENT, STAFF, ADMIN</span>
+      <span class="badge">SupportArea: REGISTRATION, IT</span>
+      <span class="badge">AcademicDepartment: ENGINEERING, BUSINESS, LAW, MEDICINE</span>
+      <span class="badge">TicketStatus: OPEN, IN_PROGRESS, RESOLVED</span>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>6. Backend API Modules</h2>
+    <p>
+      The backend is organized by domain modules. <code>api/src/app.module.ts</code> imports all modules and registers global throttling.
+    </p>
+    <table>
+      <tr>
+        <th>Module</th>
+        <th>Main Files</th>
+        <th>What It Does</th>
+      </tr>
+      <tr>
+        <td>Auth</td>
+        <td><code>auth.service.ts</code>, <code>auth.controller.ts</code></td>
+        <td>Student registration, login, admin user provisioning, password hashing with Argon2, and JWT signing.</td>
+      </tr>
+      <tr>
+        <td>Users</td>
+        <td><code>users.service.ts</code>, <code>users.controller.ts</code></td>
+        <td>Returns current user profile and supports profile updates.</td>
+      </tr>
+      <tr>
+        <td>Tickets</td>
+        <td><code>tickets.service.ts</code>, <code>tickets.controller.ts</code></td>
+        <td>Creates tickets, lists student tickets and staff queues, enforces access, handles claims, status updates, messages, and attachments.</td>
+      </tr>
+      <tr>
+        <td>Assistant</td>
+        <td><code>assistant.service.ts</code>, <code>orchestrator.service.ts</code>, <code>knowledge-agent.service.ts</code>, <code>workflow-agent.service.ts</code></td>
+        <td>Classifies messages, routes agents, answers from trusted knowledge, escalates to tickets, and records traces.</td>
+      </tr>
+      <tr>
+        <td>Knowledge</td>
+        <td><code>knowledge.service.ts</code>, <code>knowledge.controller.ts</code></td>
+        <td>Creates FAQ entries, uploads documents, chunks text, stores embeddings, searches, and retrieves relevant context.</td>
+      </tr>
+      <tr>
+        <td>AI</td>
+        <td><code>gemini.service.ts</code></td>
+        <td>Connects to Gemini for embeddings and answer generation, with deterministic fallback when no API key exists.</td>
+      </tr>
+      <tr>
+        <td>Admin</td>
+        <td><code>admin.controller.ts</code></td>
+        <td>Lists users, updates routing assignments, exposes traces, and still contains backend API key creation.</td>
+      </tr>
+      <tr>
+        <td>Notifications</td>
+        <td><code>notifications.service.ts</code></td>
+        <td>Creates notifications, returns unread counts, and marks related ticket notifications as read.</td>
+      </tr>
+      <tr>
+        <td>Public API</td>
+        <td><code>public-api.controller.ts</code>, <code>api-key.guard.ts</code></td>
+        <td>Provides API-key-protected endpoints for external systems.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section page-break">
+    <h2>7. Frontend Application</h2>
+    <p>
+      The frontend lives in <code>web/src</code>. It uses Next.js app routes and client components for interactive dashboard workflows.
+    </p>
+    <h3>Main Pages</h3>
+    <table>
+      <tr>
+        <th>Page</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>/</code></td>
+        <td>Landing page that introduces the support portal.</td>
+      </tr>
+      <tr>
+        <td><code>/login</code></td>
+        <td>Authenticates existing users with LIU ID and password.</td>
+      </tr>
+      <tr>
+        <td><code>/register</code></td>
+        <td>Lets students create accounts with LIU ID, full name, password, and academic department.</td>
+      </tr>
+      <tr>
+        <td><code>/dashboard</code></td>
+        <td>Main role-based dashboard for assistant, tickets, queues, admin knowledge tools, user provisioning, and traces.</td>
+      </tr>
+      <tr>
+        <td><code>/dashboard/tickets/[id]</code></td>
+        <td>Ticket detail page with messages, attachments, status changes, and ticket event history.</td>
+      </tr>
+      <tr>
+        <td><code>/privacy</code>, <code>/terms</code></td>
+        <td>Static legal/support pages.</td>
+      </tr>
+    </table>
+    <h3>Frontend Data Flow</h3>
+    <div class="flow">User logs in
+  -> login page receives accessToken
+  -> token stored in localStorage
+  -> apiRequest adds Authorization: Bearer token
+  -> dashboard loads /me and notifications
+  -> role controls which panels are shown
+  -> actions call NestJS API endpoints</div>
+    <p>
+      The helper in <code>web/src/lib/api.ts</code> centralizes API requests, JSON headers, auth token headers, form-data uploads, blob downloads, and error parsing.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>8. Assistant And Multi-Agent Flow</h2>
+    <p>
+      The assistant is the core feature. It receives a message, decides whether it is a knowledge question, workflow request, or mixed request, then delegates to the correct agent.
+    </p>
+    <h3>Agents</h3>
+    <table>
+      <tr>
+        <th>Agent</th>
+        <th>Role In The System</th>
+      </tr>
+      <tr>
+        <td>Orchestrator Agent</td>
+        <td>Classifies intent using keyword signals and detects support area from the message.</td>
+      </tr>
+      <tr>
+        <td>Knowledge Agent</td>
+        <td>Retrieves trusted context and asks Gemini/local fallback to answer only from that context.</td>
+      </tr>
+      <tr>
+        <td>Workflow Agent</td>
+        <td>Creates tickets or checks ticket status when the user asks for workflow actions.</td>
+      </tr>
+    </table>
+    <h3>Assistant Flow</h3>
+    <div class="flow">POST /api/assistant/message
+  -> JwtAuthGuard checks the user
+  -> OrchestratorService.classifyIntent()
+  -> If KNOWLEDGE or MIXED:
+       KnowledgeAgentService.answer()
+       KnowledgeService.retrieveRelevant()
+       GeminiService.answerWithContext()
+       confidence is calculated
+  -> If low confidence:
+       ask student whether to create ticket
+       or create ticket immediately when requested
+  -> If WORKFLOW:
+       WorkflowAgentService.handle()
+       TicketsService creates/checks ticket
+  -> OrchestratorTrace is stored
+  -> response returns message, intent, confidence, citations, and optional ticketId</div>
+    <p>
+      The confidence threshold is <code>0.35</code>. Below that, the assistant avoids risky answers and asks to escalate or creates a ticket if the user has requested escalation.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>9. Knowledge Base And RAG Flow</h2>
+    <p>
+      The knowledge base is seeded from Markdown files in <code>docs/knowledge</code> and can also be expanded by admins through FAQ creation and document upload.
+    </p>
+    <h3>Current Knowledge Sources</h3>
+    <ul>
+      <li><code>docs/knowledge/liu-registration-quick-guide.md</code></li>
+      <li><code>docs/knowledge/liu-admission-registration-student-support.md</code></li>
+      <li>Admin-created FAQ entries stored in <code>faq_entries</code></li>
+      <li>Admin-uploaded documents stored in <code>knowledge_documents</code> and <code>knowledge_chunks</code></li>
+    </ul>
+    <h3>Retrieval Logic</h3>
+    <ol>
+      <li>The question is embedded using Gemini or local fallback.</li>
+      <li>Document chunks are loaded from active knowledge documents.</li>
+      <li>FAQ entries are converted into <code>Q: ... A: ...</code> candidates.</li>
+      <li>Question-answer pairs are extracted from document content.</li>
+      <li>Candidates are scored with cosine similarity, keyword overlap, and small boosts for exact QA-style content.</li>
+      <li>Low-score results are filtered out, duplicates are removed, and the top results are sent to the answer generator.</li>
+    </ol>
+    <div class="note">
+      <strong>Safety behavior</strong>
+      If no trusted context is found, or the model returns <code>CONTEXT_INSUFFICIENT</code>, the assistant does not invent an answer. It asks to create a ticket or escalates directly when requested.
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <h2>10. Ticket Workflow</h2>
+    <p>
+      Tickets are the human escalation path. They can be created directly by students or indirectly by the assistant when trusted knowledge is insufficient.
+    </p>
+    <h3>Student Ticket Creation</h3>
+    <div class="flow">Student submits ticket
+  -> POST /api/tickets
+  -> TicketsService checks:
+       user exists
+       role is STUDENT
+       account is active
+       academicDepartment is assigned
+  -> Ticket is created with status OPEN
+  -> TicketEvent CREATED is stored
+  -> matching staff receive notifications and email
+  -> ticket appears in student dashboard and staff queue</div>
+    <h3>Staff Queue And Claiming</h3>
+    <p>
+      Staff members only see tickets in their assigned <code>supportArea</code> and <code>academicDepartment</code>. A ticket can be unassigned or assigned to the current staff member. If another staff member already claimed it, access is blocked.
+    </p>
+    <h3>Status And Messages</h3>
+    <ul>
+      <li><code>OPEN</code> means the ticket is waiting or unclaimed.</li>
+      <li><code>IN_PROGRESS</code> means staff has claimed or started working on it.</li>
+      <li><code>RESOLVED</code> means the support request is complete.</li>
+      <li>Messages are stored as <code>TicketEvent</code> records with event type <code>MESSAGE</code>.</li>
+      <li>Every meaningful action creates a ticket event so the history is visible.</li>
+    </ul>
+    <h3>Attachments</h3>
+    <p>
+      Attachments are uploaded through multipart form data. The backend accepts PNG, JPEG, PDF, and text files up to 5 MB. Metadata is stored in the database and the physical file is stored in the upload directory.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>11. Admin Workflow</h2>
+    <p>
+      Admins manage the operational side of the portal. Their dashboard includes knowledge tools, user provisioning, user routing, and trace review.
+    </p>
+    <table>
+      <tr>
+        <th>Admin Feature</th>
+        <th>How It Works</th>
+      </tr>
+      <tr>
+        <td>Provision users</td>
+        <td>Admin creates staff or admin accounts through <code>/auth/admin/provision</code>. Staff accounts require support area and academic department.</td>
+      </tr>
+      <tr>
+        <td>Assign routing</td>
+        <td>Admin updates support area and academic department using <code>PATCH /api/admin/users/:id/routing</code>.</td>
+      </tr>
+      <tr>
+        <td>Create FAQ</td>
+        <td>Admin creates question-answer entries that become searchable by the knowledge agent.</td>
+      </tr>
+      <tr>
+        <td>Upload document</td>
+        <td>Admin uploads text or a file. The backend chunks it and creates embeddings.</td>
+      </tr>
+      <tr>
+        <td>Review traces</td>
+        <td>Admin reads recent <code>OrchestratorTrace</code> records to understand assistant decisions.</td>
+      </tr>
+    </table>
+    <div class="note">
+      <strong>Recent UI decision</strong>
+      The dashboard API key generator was removed from the admin interface. The backend model and endpoint still exist because the public API is still API-key protected.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>12. Security And Permissions</h2>
+    <p>
+      The project has multiple layers of protection: password hashing, JWT authentication, role-based guards, service-level ownership checks, API-key protection for public endpoints, and throttling.
+    </p>
+    <table>
+      <tr>
+        <th>Security Area</th>
+        <th>Implementation</th>
+      </tr>
+      <tr>
+        <td>Password security</td>
+        <td>Passwords are hashed with Argon2id before storage.</td>
+      </tr>
+      <tr>
+        <td>JWT auth</td>
+        <td>Login returns a signed token containing user ID, LIU ID, role, support area, and academic department.</td>
+      </tr>
+      <tr>
+        <td>Route guards</td>
+        <td><code>JwtAuthGuard</code> protects logged-in routes. <code>RolesGuard</code> restricts admin/staff/student endpoints.</td>
+      </tr>
+      <tr>
+        <td>Ticket access</td>
+        <td>Students see only their own tickets. Staff see only assigned-lane tickets. Admins see all.</td>
+      </tr>
+      <tr>
+        <td>Public API auth</td>
+        <td><code>ApiKeyGuard</code> requires <code>x-api-key</code> and compares hashed keys in the database.</td>
+      </tr>
+      <tr>
+        <td>Rate limiting</td>
+        <td>Nest throttling is global, with specific limits on assistant and message routes.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section page-break">
+    <h2>13. Notifications, Email, And Uploads</h2>
+    <h3>Notifications</h3>
+    <p>
+      Notifications are created when tickets are created, claimed, updated, or receive messages. The dashboard reads unread counts from <code>/api/notifications/unread-count</code>. Ticket-related notifications can be marked read when the user opens the ticket.
+    </p>
+    <h3>Email</h3>
+    <p>
+      When a ticket is created, matching staff members with email addresses can receive email through the mail module. SMTP settings are configured through environment variables. If SMTP is not configured, the project can still run without email delivery.
+    </p>
+    <h3>File Uploads</h3>
+    <p>
+      Uploaded files are validated by MIME type and size, then stored on disk. The database stores file metadata so the app can list, open, and remove attachments while preserving ticket history.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>14. Public API</h2>
+    <p>
+      The public API is designed for external integrations. It is protected by API keys and rate limiting. External systems can search knowledge and manage tickets through controlled endpoints.
+    </p>
+    <h3>Endpoints</h3>
+    <ul>
+      <li><code>GET /api/public/docs</code></li>
+      <li><code>GET /api/public/knowledge/search</code></li>
+      <li><code>POST /api/public/tickets</code></li>
+      <li><code>GET /api/public/tickets/:ticketId</code></li>
+      <li><code>PUT /api/public/tickets/:ticketId</code></li>
+      <li><code>DELETE /api/public/tickets/:ticketId/attachments/:attachmentId</code></li>
+    </ul>
+    <p>
+      Public API updates use an active admin account internally for ticket actions. This keeps the external API separate from normal browser JWT sessions.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>15. Deployment And Running</h2>
+    <p>
+      Docker Compose is the recommended way to run the full stack. It starts PostgreSQL with pgvector, the NestJS API, the Next.js web app, and Nginx as a reverse proxy.
+    </p>
+    <h3>Docker Flow</h3>
+    <div class="flow">docker compose up --build
+  -> db starts PostgreSQL/pgvector
+  -> api runs prisma db push
+  -> api runs seed script
+  -> api starts NestJS server
+  -> web starts Next.js app
+  -> reverse-proxy serves app on http://localhost</div>
+    <h3>Important Environment Variables</h3>
+    <table>
+      <tr>
+        <th>Variable</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>DATABASE_URL</code></td>
+        <td>PostgreSQL connection used by Prisma.</td>
+      </tr>
+      <tr>
+        <td><code>JWT_SECRET</code></td>
+        <td>Secret used to sign and verify JWT tokens.</td>
+      </tr>
+      <tr>
+        <td><code>GEMINI_API_KEY</code></td>
+        <td>Optional key for Gemini. Without it, local fallback logic is used.</td>
+      </tr>
+      <tr>
+        <td><code>NEXT_PUBLIC_API_URL</code></td>
+        <td>Frontend API base URL.</td>
+      </tr>
+      <tr>
+        <td><code>UPLOAD_DIR</code></td>
+        <td>Directory where uploaded attachments are stored.</td>
+      </tr>
+      <tr>
+        <td><code>BOOTSTRAP_ADMIN_*</code></td>
+        <td>Credentials and profile data for the seed-created admin account.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section page-break">
+    <h2>16. Testing And Project Health</h2>
+    <p>
+      The project includes unit tests and e2e tests for the API, plus lint and build checks for the web app.
+    </p>
+    <h3>Useful Commands</h3>
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>cd web && npm.cmd run lint</code></td>
+        <td>Runs frontend ESLint.</td>
+      </tr>
+      <tr>
+        <td><code>cd web && npm.cmd run build</code></td>
+        <td>Builds the production frontend.</td>
+      </tr>
+      <tr>
+        <td><code>cd api && npm.cmd test -- --runInBand</code></td>
+        <td>Runs backend unit tests.</td>
+      </tr>
+      <tr>
+        <td><code>cd api && npm.cmd run build</code></td>
+        <td>Builds the NestJS API.</td>
+      </tr>
+      <tr>
+        <td><code>cd api && npm.cmd run test:e2e</code></td>
+        <td>Runs e2e tests such as the health endpoint test.</td>
+      </tr>
+      <tr>
+        <td><code>cd api && npx.cmd prisma validate</code></td>
+        <td>Validates the Prisma schema.</td>
+      </tr>
+    </table>
+    <div class="note">
+      <strong>Last health check result</strong>
+      Web lint/build passed. API tests/build/lint passed. Prisma validation passed. Dependency audits found vulnerabilities that should be reviewed before production deployment.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>17. Recommended Improvements</h2>
+    <ol>
+      <li>Update vulnerable dependencies carefully and retest. Avoid blind force upgrades without checking breaking changes.</li>
+      <li>Update diagrams and README references that still mention dashboard API key generation if the UI will keep that feature hidden.</li>
+      <li>Add more knowledge documents for IT, registration deadlines, campus procedures, and common student problems.</li>
+      <li>Add more e2e tests for login, ticket creation, assistant escalation, staff claim, and admin routing.</li>
+      <li>Add API key listing, revocation, scopes, and audit logs before exposing key management in the UI again.</li>
+      <li>Add a password reset or admin password rotation workflow for production use.</li>
+      <li>Add stronger file scanning or storage isolation if attachments will be used in a real deployment.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>18. Summary</h2>
+    <p>
+      This project is a complete support portal with a real backend, real database design, role-based permissions, ticket management, knowledge ingestion, and a multi-agent assistant. The most important design choice is that the assistant is grounded in trusted knowledge and escalates uncertain cases instead of guessing.
+    </p>
+    <p>
+      In practical use, students get answers or tickets, staff get scoped queues, admins manage operations, and the system records traces so the team can understand how the assistant is behaving. That makes the project more than a CRUD app: it is an operational workflow system with AI support.
+    </p>
+  </section>
+</body>
+</html>

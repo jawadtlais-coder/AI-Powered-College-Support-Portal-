@@ -1,0 +1,119 @@
+<mxfile host="Electron" compressed="false" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram id="page-1" name="Sequence Diagram - Student Creates a Ticket">
+    <mxGraphModel dx="1209" dy="794" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1300" pageHeight="780" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="student-head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontStyle=1;fontSize=12;" value="Student" vertex="1">
+          <mxGeometry height="42" width="120" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="student-lifeline" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=4 4;endArrow=none;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="92" as="sourcePoint" />
+            <mxPoint x="100" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="web-head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontStyle=1;fontSize=12;" value="Web App" vertex="1">
+          <mxGeometry height="42" width="120" x="270" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="web-lifeline" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=4 4;endArrow=none;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="92" as="sourcePoint" />
+            <mxPoint x="330" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tickets-head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontStyle=1;fontSize=12;" value="Tickets API" vertex="1">
+          <mxGeometry height="42" width="120" x="550" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tickets-lifeline" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=4 4;endArrow=none;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="92" as="sourcePoint" />
+            <mxPoint x="610" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db-head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontStyle=1;fontSize=12;" value="Database" vertex="1">
+          <mxGeometry height="42" width="120" x="850" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="db-lifeline" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=4 4;endArrow=none;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="92" as="sourcePoint" />
+            <mxPoint x="910" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="staff-head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontStyle=1;fontSize=12;" value="Staff" vertex="1">
+          <mxGeometry height="42" width="120" x="1110" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="staff-lifeline" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#94A3B8;dashed=1;dashPattern=4 4;endArrow=none;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="92" as="sourcePoint" />
+            <mxPoint x="1170" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ticket-act" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#475569;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="260" width="12" x="604" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="db-create" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#475569;" value="" vertex="1">
+          <mxGeometry height="70" width="12" x="904" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="db-find" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#475569;" value="" vertex="1">
+          <mxGeometry height="70" width="12" x="904" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="1. Fill support request">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="150" as="sourcePoint" />
+            <mxPoint x="330" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="2. POST /tickets">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="190" as="sourcePoint" />
+            <mxPoint x="610" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="3. Create ticket + CREATED event">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="610" y="230" as="sourcePoint" />
+            <mxPoint x="910" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;dashed=1;dashPattern=4 4;endArrow=block;endFill=0;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="4. Ticket created">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="270" as="sourcePoint" />
+            <mxPoint x="610" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="5. Find staff in department">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="330" as="sourcePoint" />
+            <mxPoint x="910" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;dashed=1;dashPattern=4 4;endArrow=block;endFill=0;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="6. Staff list">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="370" as="sourcePoint" />
+            <mxPoint x="610" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="7. Notify department staff">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="410" as="sourcePoint" />
+            <mxPoint x="1170" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;dashed=1;dashPattern=4 4;endArrow=block;endFill=0;fontSize=11;labelBackgroundColor=#FFFFFF;fontColor=#000000;" value="8. Ticket confirmation">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="450" as="sourcePoint" />
+            <mxPoint x="330" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;strokeColor=#111827;dashed=1;dashPattern=4 4;endArrow=block;endFill=0;fontSize=11;labelBackgroundColor=#FFFFFF;" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;9. Show submitted ticket&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="490" as="sourcePoint" />
+            <mxPoint x="100" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

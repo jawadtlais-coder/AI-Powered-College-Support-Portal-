@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-04-19T00:00:00.000Z" agent="Codex" version="29.6.1" editor="www.draw.io" compressed="false">
+  <diagram id="class-diagram-page" name="Class Diagram">
+    <mxGraphModel dx="2290" dy="2470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2350" pageHeight="2550" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;User&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- schoolId: String&lt;br/&gt;- email: String?&lt;br/&gt;- passwordHash: String&lt;br/&gt;- role: Role&lt;br/&gt;- supportArea: SupportArea?&lt;br/&gt;- academicDepartment: AcademicDepartment?&lt;br/&gt;- active: Boolean&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ login()&lt;br/&gt;+ logout()&lt;br/&gt;+ viewProfile()&lt;br/&gt;+ updateProfile()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#EFF6FF;strokeColor=#1D4ED8;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="40" width="340" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Profile&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- fullName: String&lt;br/&gt;- avatarUrl: String?&lt;br/&gt;- userId: String&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ viewProfile()&lt;br/&gt;+ updateProfile()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="300" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="notification" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Notification&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- userId: String&lt;br/&gt;- type: NotificationType&lt;br/&gt;- title: String&lt;br/&gt;- message: String&lt;br/&gt;- read: Boolean&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createMany()&lt;br/&gt;+ getUnreadCount()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="840" y="55" width="320" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="trace" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;OrchestratorTrace&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- userId: String&lt;br/&gt;- intent: String&lt;br/&gt;- confidence: Float?&lt;br/&gt;- routedAgents: Json&lt;br/&gt;- outcome: Json&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ recordTrace()&lt;br/&gt;+ viewTraces()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="55" width="340" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="apikey" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;ApiKey&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- label: String&lt;br/&gt;- hashedKey: String&lt;br/&gt;- scopes: String[]&lt;br/&gt;- rateLimitPolicy: Json?&lt;br/&gt;- active: Boolean&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createApiKey()&lt;br/&gt;+ validateKey()&lt;br/&gt;+ deactivate()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFBEB;strokeColor=#D97706;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1660" y="55" width="340" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="student" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Student&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- role: Role = STUDENT&lt;br/&gt;- academicDepartment: AcademicDepartment&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ register()&lt;br/&gt;+ createTicket()&lt;br/&gt;+ viewMyTickets()&lt;br/&gt;+ updateOwnTicket()&lt;br/&gt;+ addAttachment()&lt;br/&gt;+ removeAttachment()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="300" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="staff" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Staff&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- role: Role = STAFF&lt;br/&gt;- supportArea: SupportArea&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ listQueue()&lt;br/&gt;+ viewTicket()&lt;br/&gt;+ claimTicket()&lt;br/&gt;+ updateTicket()&lt;br/&gt;+ updateTicketStatus()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="410" width="300" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Admin&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- role: Role = ADMIN&lt;br/&gt;- supportArea: SupportArea?&lt;br/&gt;- academicDepartment: AcademicDepartment?&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ provisionUser()&lt;br/&gt;+ updateUserRouting()&lt;br/&gt;+ createApiKey()&lt;br/&gt;+ viewTraces()&lt;br/&gt;+ manageFaq()&lt;br/&gt;+ uploadKnowledgeDocument()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="840" y="410" width="320" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ticket" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Ticket&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- studentId: String&lt;br/&gt;- supportArea: SupportArea&lt;br/&gt;- academicDepartment: AcademicDepartment?&lt;br/&gt;- subject: String&lt;br/&gt;- description: String&lt;br/&gt;- status: TicketStatus&lt;br/&gt;- assigneeId: String?&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createTicket()&lt;br/&gt;+ getTicketById()&lt;br/&gt;+ claimTicket()&lt;br/&gt;+ updateStatus()&lt;br/&gt;+ updateTicket()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="780" width="360" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketEvent" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;TicketEvent&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- ticketId: String&lt;br/&gt;- actorId: String&lt;br/&gt;- eventType: String&lt;br/&gt;- payload: Json?&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ logEvent()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="520" y="780" width="300" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="attachment" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;Attachment&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- ticketId: String&lt;br/&gt;- uploaderId: String&lt;br/&gt;- fileName: String&lt;br/&gt;- mimeType: String&lt;br/&gt;- sizeBytes: Int&lt;br/&gt;- storagePath: String&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ addAttachment()&lt;br/&gt;+ removeAttachment()&lt;br/&gt;+ validateAttachment()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FFFFFF;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="780" width="320" height="245" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeDocument" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;KnowledgeDocument&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- title: String&lt;br/&gt;- supportArea: SupportArea&lt;br/&gt;- sourceType: KnowledgeSourceType&lt;br/&gt;- content: String&lt;br/&gt;- status: String&lt;br/&gt;- uploadedBy: String&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createDocument()&lt;br/&gt;+ search()&lt;br/&gt;+ retrieveRelevant()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#ECFDF5;strokeColor=#059669;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="760" width="360" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeChunk" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;KnowledgeChunk&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- documentId: String&lt;br/&gt;- chunkText: String&lt;br/&gt;- embedding: Float[]&lt;br/&gt;- chunkIndex: Int&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ generateEmbedding()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F0FDF4;strokeColor=#059669;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="790" width="320" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="faq" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;FaqEntry&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- id: String&lt;br/&gt;- supportArea: SupportArea&lt;br/&gt;- question: String&lt;br/&gt;- answer: String&lt;br/&gt;- tags: String[]&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createFaq()&lt;br/&gt;+ search()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F0FDF4;strokeColor=#059669;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="1130" width="360" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="authService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;AuthService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- prisma: PrismaService&lt;br/&gt;- jwtService: JwtService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ registerStudent()&lt;br/&gt;+ provisionUser()&lt;br/&gt;+ login()&lt;br/&gt;- signToken()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1450" width="300" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="usersService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;UsersService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- prisma: PrismaService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ me()&lt;br/&gt;+ updateProfile()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1450" width="280" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketsService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;TicketsService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- prisma: PrismaService&lt;br/&gt;- mailService: MailService&lt;br/&gt;- notificationsService: NotificationsService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createTicket()&lt;br/&gt;+ listMyTickets()&lt;br/&gt;+ listQueue()&lt;br/&gt;+ claim()&lt;br/&gt;+ updateStatus()&lt;br/&gt;+ updateTicket()&lt;br/&gt;+ addAttachment()&lt;br/&gt;+ removeAttachment()&lt;br/&gt;+ createMessage()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1450" width="340" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;KnowledgeService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- prisma: PrismaService&lt;br/&gt;- geminiService: GeminiService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createFaq()&lt;br/&gt;+ createDocument()&lt;br/&gt;+ search()&lt;br/&gt;+ retrieveRelevant()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1450" width="330" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="assistantService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;AssistantService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- orchestrator: OrchestratorService&lt;br/&gt;- knowledgeAgent: KnowledgeAgentService&lt;br/&gt;- workflowAgent: WorkflowAgentService&lt;br/&gt;- prisma: PrismaService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ message()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FEF2F2;strokeColor=#DC2626;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="1450" width="340" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="orchestratorService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;OrchestratorService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ classifyIntent()&lt;br/&gt;+ detectSupportArea()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FEF2F2;strokeColor=#DC2626;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1810" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeAgentService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;KnowledgeAgentService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- knowledgeService: KnowledgeService&lt;br/&gt;- geminiService: GeminiService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ answer()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FEF2F2;strokeColor=#DC2626;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1810" width="320" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="workflowAgentService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;WorkflowAgentService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- ticketsService: TicketsService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ handle()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#FEF2F2;strokeColor=#DC2626;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1810" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="notificationsService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;NotificationsService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- prisma: PrismaService&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ createMany()&lt;br/&gt;+ getUnreadCount()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="1810" width="300" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="geminiService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;GeminiService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- apiKey: string?&lt;br/&gt;- modelName: string&lt;br/&gt;- embeddingModel: string&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ embed()&lt;br/&gt;+ answerWithContext()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="1810" width="300" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="mailService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;MailService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;- transporter: Transporter?&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ sendMail()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F5F3FF;strokeColor=#7C3AED;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1900" y="1810" width="280" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="prismaService" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;PrismaService&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;extends PrismaClient&lt;br/&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;+ onModuleInit()&lt;br/&gt;+ onModuleDestroy()&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#EEF2FF;strokeColor=#4F46E5;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2140" width="300" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="roleEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; Role&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;STUDENT&lt;br/&gt;STAFF&lt;br/&gt;ADMIN&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="2140" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="supportAreaEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; SupportArea&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;REGISTRATION&lt;br/&gt;IT&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="2140" width="240" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="academicDepartmentEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; AcademicDepartment&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;ENGINEERING&lt;br/&gt;BUSINESS&lt;br/&gt;LAW&lt;br/&gt;MEDICINE&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="2140" width="260" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketStatusEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; TicketStatus&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;OPEN&lt;br/&gt;IN_PROGRESS&lt;br/&gt;RESOLVED&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="2140" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="notificationTypeEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; NotificationType&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;TICKET_CREATED&lt;br/&gt;TICKET_UPDATED&lt;br/&gt;SYSTEM&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="2140" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeSourceTypeEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; KnowledgeSourceType&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;FAQ&lt;br/&gt;DOCUMENT&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="2140" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="agentIntentEnum" value="&lt;div style=&quot;text-align:center;font-size:14px;font-weight:700;&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt; AgentIntent&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;line-height:1.45;&quot;&gt;KNOWLEDGE&lt;br/&gt;WORKFLOW&lt;br/&gt;MIXED&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;spacingRight=10;spacingBottom=8;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="2320" width="240" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="roleNote" value="Student, Staff, and Admin are role-based specializations of User. In Prisma they are stored in the same User table using User.role." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="410" width="360" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="namingNote" value="Prisma field name is supportArea. It is mapped to the database column/table label &quot;department&quot;, so the diagram uses SupportArea to match the code." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#111827;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1640" y="410" width="360" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="eUserProfile" value="1 has 0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="user" target="profile">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserNotification" value="1 receives 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="user" target="notification">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserTrace" value="1 creates 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="user" target="trace">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserApiKey" value="creates 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="admin" target="apikey">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eStudentUser" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=0;endSize=18;" edge="1" parent="1" source="student" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eStaffUser" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=0;endSize=18;" edge="1" parent="1" source="staff" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAdminUser" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=0;endSize=18;" edge="1" parent="1" source="admin" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eStudentTicket" value="1 creates 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="student" target="ticket">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eStaffTicket" value="0..1 assigned to 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="staff" target="ticket">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketEvent" value="1 logs 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="ticket" target="ticketEvent">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketAttachment" value="1 has 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="ticket" target="attachment">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketEventActor" value="actor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="ticketEvent" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAttachmentUser" value="uploaded by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="attachment" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserDocument" value="uploads 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="user" target="knowledgeDocument">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eDocumentChunk" value="1 splits into 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="knowledgeDocument" target="knowledgeChunk">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAdminDocument" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="admin" target="knowledgeDocument">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAdminFaq" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=classic;endFill=1;" edge="1" parent="1" source="admin" target="faq">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAuthUser" value="creates/authenticates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="authService" target="user">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUsersProfile" value="updates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="usersService" target="profile">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketsTicket" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticketsService" target="ticket">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketsNotify" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticketsService" target="notificationsService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketsMail" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticketsService" target="mailService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eKnowledgeDoc" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeService" target="knowledgeDocument">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eKnowledgeFaq" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeService" target="faq">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eKnowledgeGemini" value="uses embeddings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeService" target="geminiService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAssistantOrchestrator" value="routes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="assistantService" target="orchestratorService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAssistantKnowledgeAgent" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="assistantService" target="knowledgeAgentService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAssistantWorkflowAgent" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="assistantService" target="workflowAgentService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eAssistantTrace" value="records" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="assistantService" target="trace">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eKnowledgeAgentKnowledge" value="retrieves context" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeAgentService" target="knowledgeService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eKnowledgeAgentGemini" value="answers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeAgentService" target="geminiService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eWorkflowAgentTickets" value="creates tickets" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="workflowAgentService" target="ticketsService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eNotificationsModel" value="manages" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="notificationsService" target="notification">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaAuth" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="authService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaUsers" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="usersService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaTickets" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticketsService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaKnowledge" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaAssistant" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="assistantService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="ePrismaNotifications" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="notificationsService" target="prismaService">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserRole" value="role" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="user" target="roleEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserSupportArea" value="supportArea" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="user" target="supportAreaEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eUserAcademicDepartment" value="academicDepartment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="user" target="academicDepartmentEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketStatus" value="status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticket" target="ticketStatusEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketSupportArea" value="supportArea" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticket" target="supportAreaEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eTicketAcademicDepartment" value="academicDepartment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="ticket" target="academicDepartmentEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eNotificationType" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="notification" target="notificationTypeEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eDocumentSourceType" value="sourceType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="knowledgeDocument" target="knowledgeSourceTypeEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="eOrchestratorIntent" value="returns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="orchestratorService" target="agentIntentEnum">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

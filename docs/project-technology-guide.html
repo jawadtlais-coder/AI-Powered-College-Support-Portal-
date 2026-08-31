@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technology Guide - College Support Multi-Agent Portal</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    :root {
+      --ink: #172033;
+      --muted: #5c687a;
+      --line: #d8e1ea;
+      --soft: #f5f8fb;
+      --brand: #155c7d;
+      --brand-dark: #103a50;
+      --accent: #287956;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "Segoe UI", "Aptos", "Helvetica Neue", Arial, sans-serif;
+      font-size: 11.5pt;
+      line-height: 1.55;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--brand-dark);
+      line-height: 1.16;
+      margin: 0;
+      break-after: avoid;
+    }
+
+    h1 {
+      font-size: 30pt;
+      max-width: 730px;
+    }
+
+    h2 {
+      font-size: 18pt;
+      margin-top: 26px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 13.5pt;
+      margin-top: 16px;
+    }
+
+    p {
+      margin: 8px 0 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    code {
+      color: #12384f;
+      background: #edf4f8;
+      border: 1px solid #d7e5ee;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 9.5pt;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 10.5pt;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf5f9;
+      color: var(--brand-dark);
+    }
+
+    .cover {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px 0 8px;
+      break-after: page;
+    }
+
+    .cover-top {
+      border-left: 7px solid var(--brand);
+      padding-left: 22px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14pt;
+      margin-top: 12px;
+      max-width: 720px;
+    }
+
+    .meta-grid,
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .card,
+    .note,
+    .flow {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 12px 14px;
+      break-inside: avoid;
+    }
+
+    .card strong,
+    .note strong {
+      display: block;
+      color: var(--brand-dark);
+      margin-bottom: 3px;
+    }
+
+    .flow {
+      background: #fbfcfe;
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 9.5pt;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid #b9d6e3;
+      background: #eef7fb;
+      color: #143f55;
+      border-radius: 999px;
+      padding: 2px 7px;
+      font-size: 9.5pt;
+      margin: 2px 4px 2px 0;
+    }
+
+    .page-break {
+      break-before: page;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 10pt;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="cover-top">
+      <p class="badge">Technology Explanation</p>
+      <h1>How The Technologies In The Project Work</h1>
+      <p class="subtitle">
+        A simple guide explaining Node.js, TypeScript, NestJS, Next.js, Prisma, PostgreSQL, Docker, JWT, REST APIs, and how they connect inside the College Support Multi-Agent Portal.
+      </p>
+      <div class="meta-grid">
+        <div class="card">
+          <strong>For Presentation</strong>
+          Explains the technologies in clear language for project defense or documentation.
+        </div>
+        <div class="card">
+          <strong>For This Project</strong>
+          Shows exactly where each technology fits in your web app, API, database, and AI workflow.
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      Generated for the current project in <code>Transcendence-main</code>.
+    </div>
+  </section>
+
+  <section>
+    <h2>1. Big Picture</h2>
+    <p>
+      Your project is a full-stack web application. Full-stack means it has a frontend that users see in the browser, a backend that handles logic and security, and a database that stores the project data.
+    </p>
+    <div class="flow">User browser
+  -> Next.js frontend
+  -> NestJS API running on Node.js
+  -> Prisma ORM
+  -> PostgreSQL database
+
+Optional services
+  -> Gemini AI for answers and embeddings
+  -> SMTP mail server for email notifications
+  -> Docker and Nginx for deployment</div>
+    <p>
+      In simple words: the browser sends requests, the backend checks permissions and runs business logic, Prisma talks to the database, and PostgreSQL stores the information permanently.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Node.js</h2>
+    <p>
+      Node.js is a runtime that allows JavaScript and TypeScript code to run outside the browser. Normally JavaScript runs in a browser, but Node.js lets the backend server use JavaScript too.
+    </p>
+    <h3>Why It Is Used</h3>
+    <ul>
+      <li>It runs the NestJS backend API.</li>
+      <li>It runs development tools like tests, build commands, Prisma commands, and package scripts.</li>
+      <li>It lets the frontend and backend both use TypeScript/JavaScript.</li>
+    </ul>
+    <h3>How It Works In Your Project</h3>
+    <p>
+      When you run <code>npm run start:dev</code> in the <code>api</code> folder, Node.js starts the NestJS server. That server listens for HTTP requests such as login, assistant messages, ticket creation, and admin actions.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. npm</h2>
+    <p>
+      npm is the package manager used by Node.js projects. It installs libraries and runs scripts defined in <code>package.json</code>.
+    </p>
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>What It Does</th>
+      </tr>
+      <tr>
+        <td><code>npm install</code></td>
+        <td>Downloads project dependencies into <code>node_modules</code>.</td>
+      </tr>
+      <tr>
+        <td><code>npm run dev</code></td>
+        <td>Starts the frontend development server.</td>
+      </tr>
+      <tr>
+        <td><code>npm run start:dev</code></td>
+        <td>Starts the backend development server.</td>
+      </tr>
+      <tr>
+        <td><code>npm run build</code></td>
+        <td>Builds the project for production.</td>
+      </tr>
+      <tr>
+        <td><code>npm test</code></td>
+        <td>Runs backend tests.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. TypeScript</h2>
+    <p>
+      TypeScript is JavaScript with types. It helps developers catch mistakes before running the app. For example, it can warn when a function expects a number but receives a string.
+    </p>
+    <h3>Why It Helps</h3>
+    <ul>
+      <li>It makes code safer and easier to understand.</li>
+      <li>It improves editor autocomplete and refactoring.</li>
+      <li>It makes DTOs, API responses, roles, ticket statuses, and database types clearer.</li>
+    </ul>
+    <p>
+      Your frontend files use <code>.tsx</code> for React components, and your backend uses <code>.ts</code> for controllers, services, guards, DTOs, and modules.
+    </p>
+  </section>
+
+  <section class="page-break">
+    <h2>5. Next.js</h2>
+    <p>
+      Next.js is the frontend framework in the <code>web</code> folder. It is built on React and provides routing, pages, build optimization, and production serving.
+    </p>
+    <h3>How It Works</h3>
+    <p>
+      Next.js maps folders inside <code>web/src/app</code> to browser pages. For example, <code>web/src/app/login/page.tsx</code> becomes the login page, and <code>web/src/app/dashboard/page.tsx</code> becomes the dashboard page.
+    </p>
+    <h3>In Your Project</h3>
+    <ul>
+      <li><code>/login</code> lets users sign in.</li>
+      <li><code>/register</code> lets students create accounts.</li>
+      <li><code>/dashboard</code> shows role-based tools for students, staff, and admins.</li>
+      <li><code>/dashboard/tickets/[id]</code> shows a specific ticket detail page.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. React</h2>
+    <p>
+      React is the UI library used by Next.js. It lets the project build the interface using reusable components.
+    </p>
+    <h3>How It Works</h3>
+    <p>
+      React components are functions that return UI. They can store state, respond to clicks, submit forms, show loading states, and update the page when data changes.
+    </p>
+    <h3>In Your Project</h3>
+    <ul>
+      <li><code>DashboardClient.tsx</code> handles the main dashboard state and API calls.</li>
+      <li><code>TicketDetailClient.tsx</code> handles ticket messages, attachments, and ticket events.</li>
+      <li><code>AdminUsersPanel.tsx</code> lets admins assign departments and support areas.</li>
+      <li><code>AppHeader.tsx</code> displays the top navigation/header.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. NestJS</h2>
+    <p>
+      NestJS is the backend framework in the <code>api</code> folder. It gives structure to the backend by organizing code into modules, controllers, services, guards, and DTOs.
+    </p>
+    <table>
+      <tr>
+        <th>NestJS Part</th>
+        <th>Meaning</th>
+        <th>Example In Project</th>
+      </tr>
+      <tr>
+        <td>Module</td>
+        <td>Groups related backend features.</td>
+        <td><code>TicketsModule</code>, <code>AuthModule</code>, <code>AssistantModule</code></td>
+      </tr>
+      <tr>
+        <td>Controller</td>
+        <td>Receives HTTP requests and returns responses.</td>
+        <td><code>TicketsController</code>, <code>AssistantController</code></td>
+      </tr>
+      <tr>
+        <td>Service</td>
+        <td>Contains business logic.</td>
+        <td><code>TicketsService</code>, <code>KnowledgeService</code></td>
+      </tr>
+      <tr>
+        <td>Guard</td>
+        <td>Checks whether a request is allowed.</td>
+        <td><code>JwtAuthGuard</code>, <code>RolesGuard</code>, <code>ApiKeyGuard</code></td>
+      </tr>
+      <tr>
+        <td>DTO</td>
+        <td>Defines and validates request data.</td>
+        <td><code>CreateTicketDto</code>, <code>CreateFaqDto</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>8. REST API</h2>
+    <p>
+      A REST API is a way for the frontend and backend to communicate through HTTP endpoints. The frontend sends requests like <code>POST /api/auth/login</code>, and the backend returns JSON responses.
+    </p>
+    <h3>Common HTTP Methods</h3>
+    <table>
+      <tr>
+        <th>Method</th>
+        <th>Purpose</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td>Read data.</td>
+        <td><code>GET /api/tickets/my</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td>Create data or perform an action.</td>
+        <td><code>POST /api/assistant/message</code></td>
+      </tr>
+      <tr>
+        <td><code>PATCH</code></td>
+        <td>Partially update data.</td>
+        <td><code>PATCH /api/tickets/:id/status</code></td>
+      </tr>
+      <tr>
+        <td><code>PUT</code></td>
+        <td>Update a resource.</td>
+        <td><code>PUT /api/tickets/:id</code></td>
+      </tr>
+      <tr>
+        <td><code>DELETE</code></td>
+        <td>Delete data.</td>
+        <td><code>DELETE /api/tickets/:id/attachments/:attachmentId</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="page-break">
+    <h2>9. PostgreSQL</h2>
+    <p>
+      PostgreSQL is the relational database used by the project. It stores data in tables with rows and columns. A relational database is good when data has clear relationships, such as users having tickets, tickets having events, and documents having chunks.
+    </p>
+    <h3>How It Stores Your Data</h3>
+    <table>
+      <tr>
+        <th>Table</th>
+        <th>What It Stores</th>
+      </tr>
+      <tr>
+        <td><code>users</code></td>
+        <td>Students, staff, and admins.</td>
+      </tr>
+      <tr>
+        <td><code>tickets</code></td>
+        <td>Support tickets created by students or the assistant.</td>
+      </tr>
+      <tr>
+        <td><code>ticket_events</code></td>
+        <td>History of actions on tickets.</td>
+      </tr>
+      <tr>
+        <td><code>knowledge_documents</code></td>
+        <td>Documents used by the knowledge agent.</td>
+      </tr>
+      <tr>
+        <td><code>knowledge_chunks</code></td>
+        <td>Text chunks and embeddings for retrieval.</td>
+      </tr>
+      <tr>
+        <td><code>faq_entries</code></td>
+        <td>Admin-created FAQ question-answer entries.</td>
+      </tr>
+      <tr>
+        <td><code>notifications</code></td>
+        <td>User notifications and read/unread state.</td>
+      </tr>
+    </table>
+    <p>
+      PostgreSQL keeps this information even after the app restarts. With Docker Compose, the data is stored in a persistent Docker volume.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Prisma</h2>
+    <p>
+      Prisma is the ORM used by the backend. ORM means Object-Relational Mapper. It lets the TypeScript backend work with database records using TypeScript code instead of writing raw SQL for every operation.
+    </p>
+    <h3>How Prisma Works</h3>
+    <ol>
+      <li>You define database models in <code>api/prisma/schema.prisma</code>.</li>
+      <li>Prisma reads the schema and generates a typed client.</li>
+      <li>The backend imports <code>PrismaService</code> and calls methods such as <code>prisma.user.findUnique()</code> or <code>prisma.ticket.create()</code>.</li>
+      <li>Prisma converts those method calls into SQL and sends them to PostgreSQL.</li>
+      <li>PostgreSQL returns data, and Prisma converts it back into TypeScript objects.</li>
+    </ol>
+    <h3>Example Concept</h3>
+    <div class="flow">Backend code:
+  prisma.ticket.create({ data: { subject, description, studentId } })
+
+Prisma:
+  converts the TypeScript object into SQL
+
+PostgreSQL:
+  inserts a new row into the tickets table</div>
+    <p>
+      Prisma is helpful because it reduces SQL mistakes, gives autocomplete, and keeps the database schema clear in one file.
+    </p>
+  </section>
+
+  <section>
+    <h2>11. pgvector And Embeddings</h2>
+    <p>
+      pgvector is a PostgreSQL extension for storing and comparing vector data. A vector is a list of numbers that represents meaning. In AI search, similar text usually has similar vectors.
+    </p>
+    <p>
+      In your project, knowledge chunks store embeddings as number arrays. When a student asks a question, the question is also embedded. The system compares the question vector with document vectors to find relevant knowledge.
+    </p>
+    <div class="flow">Question: "What is the Student Affairs phone number?"
+  -> converted to embedding numbers
+  -> compared with knowledge chunk embeddings
+  -> closest chunks are selected
+  -> Gemini/local answer uses only selected context</div>
+  </section>
+
+  <section>
+    <h2>12. JWT Authentication</h2>
+    <p>
+      JWT means JSON Web Token. It is used to prove that a user is logged in. After login, the backend returns an access token. The frontend stores it and sends it with later API requests.
+    </p>
+    <h3>How It Works</h3>
+    <div class="flow">User logs in
+  -> backend verifies LIU ID and password
+  -> backend signs a JWT
+  -> frontend stores token in localStorage
+  -> frontend sends Authorization: Bearer token
+  -> JwtAuthGuard verifies token
+  -> API knows the user role and permissions</div>
+    <p>
+      In your project, the JWT contains the user ID, LIU ID, role, support area, and academic department. That helps the backend enforce permissions.
+    </p>
+  </section>
+
+  <section class="page-break">
+    <h2>13. Guards And Permissions</h2>
+    <p>
+      Guards are backend checks that run before a request reaches the actual controller logic.
+    </p>
+    <table>
+      <tr>
+        <th>Guard</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>JwtAuthGuard</code></td>
+        <td>Requires the user to be logged in.</td>
+      </tr>
+      <tr>
+        <td><code>RolesGuard</code></td>
+        <td>Checks whether the user role is allowed to access the route.</td>
+      </tr>
+      <tr>
+        <td><code>ApiKeyGuard</code></td>
+        <td>Protects external public API routes using the <code>x-api-key</code> header.</td>
+      </tr>
+    </table>
+    <p>
+      Services also perform deeper permission checks. For example, <code>TicketsService</code> checks that students only view their own tickets and staff only view tickets in their assigned support lane.
+    </p>
+  </section>
+
+  <section>
+    <h2>14. Docker</h2>
+    <p>
+      Docker packages applications and their dependencies into containers. A container runs the same way on different machines, which makes deployment easier.
+    </p>
+    <h3>In Your Project</h3>
+    <p>
+      <code>docker-compose.yml</code> starts four services:
+    </p>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>What It Runs</th>
+      </tr>
+      <tr>
+        <td><code>db</code></td>
+        <td>PostgreSQL database with pgvector.</td>
+      </tr>
+      <tr>
+        <td><code>api</code></td>
+        <td>NestJS backend server.</td>
+      </tr>
+      <tr>
+        <td><code>web</code></td>
+        <td>Next.js frontend app.</td>
+      </tr>
+      <tr>
+        <td><code>reverse-proxy</code></td>
+        <td>Nginx server that exposes the web app and API through one address.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>15. Nginx Reverse Proxy</h2>
+    <p>
+      Nginx is used as a reverse proxy. A reverse proxy receives browser requests and forwards them to the correct internal service.
+    </p>
+    <div class="flow">Browser opens http://localhost
+  -> Nginx receives request
+  -> page request goes to web container
+  -> /api request goes to api container
+  -> browser sees one clean application address</div>
+    <p>
+      This keeps deployment cleaner because users do not need to know separate frontend and backend ports.
+    </p>
+  </section>
+
+  <section>
+    <h2>16. Gemini AI</h2>
+    <p>
+      Gemini is the AI provider used by the project for answering with context and creating embeddings. It is optional during development because the project has fallback logic when <code>GEMINI_API_KEY</code> is missing.
+    </p>
+    <h3>Two Jobs</h3>
+    <ul>
+      <li><strong>Embedding:</strong> Convert text into numbers that represent meaning.</li>
+      <li><strong>Answering:</strong> Generate an answer from the retrieved context.</li>
+    </ul>
+    <p>
+      The assistant is designed to avoid unsafe answers. If the trusted context is missing, it should say the context is insufficient and escalate to a support ticket.
+    </p>
+  </section>
+
+  <section class="page-break">
+    <h2>17. How Everything Works Together</h2>
+    <h3>Student Login Flow</h3>
+    <div class="flow">Login page
+  -> POST /api/auth/login
+  -> AuthService checks user and Argon2 password hash
+  -> JWT token returned
+  -> frontend stores token
+  -> dashboard loads user data</div>
+    <h3>Ask Assistant Flow</h3>
+    <div class="flow">Dashboard assistant form
+  -> POST /api/assistant/message
+  -> Orchestrator classifies intent
+  -> Knowledge agent searches Prisma/PostgreSQL
+  -> Gemini/local fallback creates answer
+  -> low confidence creates ticket suggestion
+  -> trace is saved for admin review</div>
+    <h3>Create Ticket Flow</h3>
+    <div class="flow">Student creates ticket
+  -> TicketsController receives request
+  -> TicketsService validates student and department
+  -> Prisma creates ticket and event in PostgreSQL
+  -> staff notifications are created
+  -> dashboard refreshes ticket list</div>
+    <h3>Admin Knowledge Upload Flow</h3>
+    <div class="flow">Admin uploads document
+  -> KnowledgeController receives file/text
+  -> KnowledgeService stores document
+  -> text is split into chunks
+  -> embeddings are generated
+  -> chunks are saved for future question answering</div>
+  </section>
+
+  <section>
+    <h2>18. Why These Technologies Are Good For This Project</h2>
+    <table>
+      <tr>
+        <th>Technology</th>
+        <th>Why It Fits</th>
+      </tr>
+      <tr>
+        <td>Node.js</td>
+        <td>Runs the TypeScript backend and tooling.</td>
+      </tr>
+      <tr>
+        <td>TypeScript</td>
+        <td>Makes both frontend and backend safer and easier to maintain.</td>
+      </tr>
+      <tr>
+        <td>Next.js</td>
+        <td>Provides a modern web interface with routing and production build support.</td>
+      </tr>
+      <tr>
+        <td>NestJS</td>
+        <td>Gives the backend a clean enterprise-style structure.</td>
+      </tr>
+      <tr>
+        <td>Prisma</td>
+        <td>Simplifies database access and keeps schema/models strongly typed.</td>
+      </tr>
+      <tr>
+        <td>PostgreSQL</td>
+        <td>Stores relational data reliably and supports advanced extensions.</td>
+      </tr>
+      <tr>
+        <td>Docker</td>
+        <td>Makes running the full stack easier and more consistent.</td>
+      </tr>
+      <tr>
+        <td>JWT</td>
+        <td>Supports stateless login sessions for the API.</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>Adds AI answers and semantic knowledge retrieval.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>19. Simple Definitions</h2>
+    <table>
+      <tr>
+        <th>Term</th>
+        <th>Simple Meaning</th>
+      </tr>
+      <tr>
+        <td>Frontend</td>
+        <td>The part users see and click in the browser.</td>
+      </tr>
+      <tr>
+        <td>Backend</td>
+        <td>The server code that handles logic, security, and database operations.</td>
+      </tr>
+      <tr>
+        <td>Database</td>
+        <td>The place where data is stored permanently.</td>
+      </tr>
+      <tr>
+        <td>API</td>
+        <td>A set of endpoints that let frontend and backend communicate.</td>
+      </tr>
+      <tr>
+        <td>ORM</td>
+        <td>A tool that lets code work with database tables as objects.</td>
+      </tr>
+      <tr>
+        <td>DTO</td>
+        <td>A class that describes and validates request data.</td>
+      </tr>
+      <tr>
+        <td>JWT</td>
+        <td>A signed token proving the user is logged in.</td>
+      </tr>
+      <tr>
+        <td>Embedding</td>
+        <td>A list of numbers representing the meaning of text.</td>
+      </tr>
+      <tr>
+        <td>RAG</td>
+        <td>Retrieval-Augmented Generation: search trusted documents first, then generate an answer from them.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>20. Summary</h2>
+    <p>
+      The project works because each technology has a clear job. Next.js and React create the user interface. Node.js runs the backend. NestJS organizes backend logic. Prisma connects the backend to PostgreSQL. PostgreSQL stores the data. JWT and guards protect the system. Docker and Nginx make deployment easier. Gemini adds AI features for knowledge answering.
+    </p>
+    <p>
+      Together, these technologies create a complete support system where users can log in, ask questions, create tickets, manage queues, upload knowledge, and receive AI-assisted answers from trusted project data.
+    </p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-04-19T00:00:00.000Z" agent="Codex" version="29.6.1" editor="www.draw.io" compressed="false">
+  <diagram id="login-activity" name="Login Activity Diagram">
+    <mxGraphModel dx="970" dy="960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="970" pageHeight="960" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="userLane" value="User" style="swimlane;horizontal=1;startSize=34;whiteSpace=wrap;html=1;rounded=0;fillColor=#EFF6FF;strokeColor=#CBD5E1;fontColor=#111827;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="390" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="systemLane" value="College Support System" style="swimlane;horizontal=1;startSize=34;whiteSpace=wrap;html=1;rounded=0;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontColor=#111827;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="40" width="500" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="lStart" value="" style="ellipse;html=1;shape=startState;fillColor=#111827;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="219" y="95" width="32" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="lOpen" value="Open login page" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="110" y="160" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lEnter" value="Enter school ID/email and password" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="90" y="255" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sysValidate" value="Validate required fields" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="565" y="255" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sysLookup" value="Find user and verify password hash" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="540" y="365" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lValid" value="Valid account?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#111827;fontSize=11;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="170" y="385" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lError" value="Show login error" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="115" y="525" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="sysToken" value="Create JWT session and load user role" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="535" y="525" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRole" value="Which role?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#111827;fontSize=11;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="170" y="650" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lStudent" value="" style="ellipse;html=1;shape=endState;fillColor=#FFFFFF;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="530" y="700" width="34" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="lStudentLabel" value="Go to Student dashboard" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="570" y="688" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="lStaff" value="" style="ellipse;html=1;shape=endState;fillColor=#FFFFFF;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="530" y="780" width="34" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="lStaffLabel" value="Go to Staff dashboard" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#059669;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="570" y="768" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="lAdmin" value="" style="ellipse;html=1;shape=endState;fillColor=#FFFFFF;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="530" y="860" width="34" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="lAdminLabel" value="Go to Admin dashboard" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;fontColor=#111827;fontSize=12;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="570" y="848" width="230" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="le1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lStart" target="lOpen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lOpen" target="lEnter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lEnter" target="sysValidate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="sysValidate" target="sysLookup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="sysLookup" target="lValid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lValid" target="lError">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le7" value="Try again" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lError" target="lEnter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lValid" target="sysToken">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="sysToken" target="lRole">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le10" value="Student" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lRole" target="lStudentLabel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le11" value="Staff" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lRole" target="lStaffLabel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le12" value="Admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lRole" target="lAdminLabel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lStudentLabel" target="lStudent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lStaffLabel" target="lStaff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="le15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="lAdminLabel" target="lAdmin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

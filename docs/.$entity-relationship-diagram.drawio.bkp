@@ -1,0 +1,82 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" compressed="false" version="29.6.1">
+  <diagram id="erd-page" name="Entity Relationship Diagram">
+    <mxGraphModel dx="1450" dy="1080" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1450" pageHeight="1080" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="College Support ER Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=18;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="560" y="28" width="360" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;Profile&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="95" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;User&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="95" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="notification" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;Notification&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="95" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="trace" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;OrchestratorTrace&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="305" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ticket" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;Ticket&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="345" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="apikey" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;ApiKey&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="305" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ticketEvent" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;TicketEvent&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="585" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="attachment" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;Attachment&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="585" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeDocument" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;KnowledgeDocument&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="720" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="knowledgeChunk" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;KnowledgeChunk&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="910" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="faq" value="&lt;div style=&quot;text-align:center;font-size:13px;font-weight:700;&quot;&gt;FaqEntry&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingTop=4;spacingLeft=6;spacingRight=6;spacingBottom=4;fillColor=#FFFFFF;strokeColor=#111827;fontColor=#111827;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="910" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="Student, Staff, and Admin are roles inside User" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="520" y="995" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eUserProfile" value="1 : 0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eUserNotification" value="1 : many" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="notification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eUserTrace" value="1 : many" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="trace">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eStudentTicket" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAssigneeTicket" value="assigned" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eTicketEvent" value="1 : many" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="ticket" target="ticketEvent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eTicketEventActor" value="actor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="ticketEvent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eTicketAttachment" value="1 : many" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="ticket" target="attachment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAttachmentUploader" value="uploads" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="attachment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eUserDocument" value="uploads" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="user" target="knowledgeDocument">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eDocumentChunk" value="1 : many" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#111827;endArrow=none;startArrow=none;fontColor=#FFFFFF;fontSize=10;labelBackgroundColor=#000000;" edge="1" parent="1" source="knowledgeDocument" target="knowledgeChunk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
